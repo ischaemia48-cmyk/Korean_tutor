@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Репетитор корейского и китайского</title>
+  <style>
+    :root {
+      --bg: #fdf9f5;
+      --text: #333;
+      --accent: #e63946;
+      --light: #f8f4f0;
+      --border: #e0d8d0;
+      --asian: #c2a8a5; /* теплый азиатский оттенок */
+      --sky: #bde0fe;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10h80v80H10z' fill='%23fff' opacity='0.3'/=%3E%3C/svg%3E");
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 40px 0 20px;
+      background: linear-gradient(135deg, var(--sky), var(--light));
+      border-radius: 20px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='10' fill='%23e63946' opacity='0.1'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: var(--text);
+      position: relative;
+      z-index: 2;
+    }
+    .intro {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #555;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .price {
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* Блок "Преимущества" как на вашей картинке */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .feature-card {
+      background: var(--light);
+      padding: 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid var(--border);
+    }
+
+    /* Отзывы */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .testimonial {
+      background: var(--light);
+      padding: 16px;
+      border-radius: 12px;
+      border-left: 4px solid var(--accent);
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "“";
+      font-size: 2rem;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      color: var(--accent);
+      opacity: 0.3;
+    }
+    .author {
+      font-weight: bold;
+      margin-top: 8px;
+      color: var(--text);
+    }
+
+    /* Кнопки */
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 6px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+    .btn-tg { background: #2ea8e6; color: white; }
+    .btn-wa { background: #25d366; color: white; }
+    .btn-call { background: #333; color: white; }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    /* Форма */
+    .form-group {
+      margin-bottom: 16px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Адаптив */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      .intro { font-size: 1rem; }
+      .btn { display: block; margin: 8px 0; width: 100%; }
+      .features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌸 Репетитор корейского и китайского</h1>
+      <p class="intro">
+        Более 5 лет помогаю подросткам открывать удивительный мир азиатских языков — через K-pop, дорамы, китайские новеллы и TikTok.  
+        Мои ученики не просто учат язык — они влюбляются в него!
+      </p>
+    </header>
+
+    <section class="section">
+      <h2>🎯 Что я предлагаю</h2>
+      <div class="features">
+        <div class="feature-card">Индивидуальная программа</div>
+        <div class="feature-card">Грамматика + разговор</div>
+        <div class="feature-card">Подготовка к ОГЭ/ЕГЭ</div>
+        <div class="feature-card">Интерактивные дз на ВЗНАНИЯ</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📚 Форматы занятий</h2>
+      <ul>
+        <li><span class="price">Индивидуальный урок:</span> 1500 ₽ / 40 минут</li>
+        <li><span class="price">В паре:</span> 2000 ₽ / 40 минут</li>
+        <li><span class="price">Пробный урок:</span> бесплатно!</li>
+      </ul>
+      <p>Работаю с начальным и средним уровнем. Все занятия — онлайн.</p>
+    </section>
+
+    <section class="section">
+      <h2>💬 Отзывы учеников</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          Заниматься с вами — одно удовольствие! Иероглифы полюбились, а не пугают. Теперь читаю манхву без словаря 😊
+          <div class="author">— Мария, 15 лет</div>
+        </div>
+        <div class="testimonial">
+          Я начала учить корейский ради BTS, а теперь могу смотреть дорамы без субтитров. Спасибо за терпение и юмор!
+          <div class="author">— Даниил, 16 лет</div>
+        </div>
+        <div class="testimonial">
+          Подготовка к ЕГЭ прошла легко — всё объясняется понятно, даже сложные темы. Баллы выше ожидаемых!
+          <div class="author">— Анна, мама ученика</div>
+        </div>
+        <div class="testimonial">
+          Преподаватель реально адаптирует программу под тебя. Мы с другом занимаемся в паре — и нам обеим комфортно.
+          <div class="author">— Лиза и Арина, 14 и 15 лет</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📞 Связаться со мной</h2>
+      <a href="https://t.me/+79995591586" class="btn btn-tg" target="_blank">Написать в Telegram</a>
+      <a href="https://wa.me/79995591586" class="btn btn-wa" target="_blank">Написать в WhatsApp</a>
+      <a href="tel:+79995591586" class="btn btn-call">Позвонить</a>
+    </section>
+
+    <section class="section">
+      <h2>✨ Записаться на пробный урок</h2>
+      <p>Оставьте ваше имя и номер — я сама вам перезвоню!</p>
+      <form id="trialForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Ваше имя" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" id="phone" placeholder="Ваш номер телефона" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Репетитор корейского и китайского языков | Погружение в культуру — через язык</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('trialForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+
+      // 🔧 ЗАМЕНИТЕ ЭТИ ДАННЫЕ НА ВАШИ:
+      const botToken = 'YOUR_BOT_TOKEN';   // токен бота от BotFather
+      const chatId = 'YOUR_CHAT_ID';       // ваш ID от userinfobot
+
+      const message = `🆕 Новая заявка на пробный урок!\nИмя: ${name}\nТелефон: ${phone}`;
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+      fetch(url)
+        .then(() => {
+          alert('Спасибо! Я скоро вам перезвоню 🌸');
+          document.getElementById('trialForm').reset();
+        })
+        .catch(() => {
+          alert('Ошибка отправки. Напишите, пожалуйста, напрямую в Telegram.');
+        });
+    });
+  </script>
+</body>
+</html>
